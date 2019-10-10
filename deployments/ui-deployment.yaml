@@ -2,20 +2,20 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    io.kompose.service: edgex-export-client
-  name: edgex-export-client
+    io.kompose.service: edgex-ui-go
+  name: edgex-ui-go
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        io.kompose.service: edgex-export-client
+        io.kompose.service: edgex-ui-go
     spec:
       containers:
-      - image: edgexfoundry/docker-export-client-go:1.0.1
-        name: edgex-export-client
+      - image: edgexfoundry/docker-edgex-ui-go:1.0.0
+        name: edgex-ui-go
         ports:
-        - containerPort: 48071
+        - containerPort: 4000
         resources: {}
         volumeMounts:
         - mountPath: /data/db

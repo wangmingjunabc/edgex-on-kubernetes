@@ -12,7 +12,7 @@ spec:
         io.kompose.service: edgex-support-logging
     spec:
       containers:
-      - image: edgexfoundry/docker-support-logging:0.2.1
+      - image: edgexfoundry/docker-support-logging-go:1.0.1
         name: edgex-support-logging
         ports:
         - containerPort: 48061
