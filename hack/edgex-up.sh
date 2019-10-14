@@ -17,11 +17,16 @@ function create_services {
   kubectl create -f "${EDGEX_ROOT}/services/export-client-service.yaml"
   kubectl create -f "${EDGEX_ROOT}/services/export-distro-service.yaml"
   kubectl create -f "${EDGEX_ROOT}/services/rulesengine-service.yaml"
+  kubectl create -f "${EDGEX_ROOT}/services/ui-edgex-service.yaml"
 }
 
 function create_deployments {
 
+  kubectl create -f "${EDGEX_ROOT}/deployments/volume-deployment.yaml"
+  sleep 10
   kubectl create -f "${EDGEX_ROOT}/deployments/consul-deployment.yaml"
+  sleep 10
+  kubectl create -f "${EDGEX_ROOT}/deployments/config-seed-deployment.yaml"
   sleep 10
   kubectl create -f "${EDGEX_ROOT}/deployments/mongo-deployment.yaml"
   sleep 10
@@ -42,6 +47,8 @@ function create_deployments {
   kubectl create -f "${EDGEX_ROOT}/deployments/export-distro-deployment.yaml"
   sleep 10
   kubectl create -f "${EDGEX_ROOT}/deployments/rulesengine-deployment.yaml"
+  sleep 10
+  kubectl create -f "${EDGEX_ROOT}/deployments/ui-deployment.yaml"
 }
 
 echo "Creating EdgeX services now!"

@@ -17,11 +17,16 @@ function delete_services {
   kubectl delete -f "${EDGEX_ROOT}/services/notifications-service.yaml"
   kubectl delete -f "${EDGEX_ROOT}/services/logging-service.yaml"
   kubectl delete -f "${EDGEX_ROOT}/services/mongo-service.yaml"
+  kubectl delete -f "${EDGEX_ROOT}/services/ui-edgex-service.yaml"
 }
 
 function delete_deployments {
 
+  kubectl delete -f "${EDGEX_ROOT}/deployments/volume-deployment.yaml"
+  sleep 10
   kubectl delete -f "${EDGEX_ROOT}/deployments/consul-deployment.yaml"
+  sleep 10
+  kubectl delete -f "${EDGEX_ROOT}/deployments//config-seed-deployment.yaml"
   sleep 10
   kubectl delete -f "${EDGEX_ROOT}/deployments/rulesengine-deployment.yaml"
   sleep 10
@@ -42,6 +47,8 @@ function delete_deployments {
   kubectl delete -f "${EDGEX_ROOT}/deployments/logging-deployment.yaml"
   sleep 10
   kubectl delete -f "${EDGEX_ROOT}/deployments/mongo-deployment.yaml"
+  sleep 10
+  kubectl delete -f "${EDGEX_ROOT}/deployments/ui-deployment.yaml"
   sleep 10
 }
 

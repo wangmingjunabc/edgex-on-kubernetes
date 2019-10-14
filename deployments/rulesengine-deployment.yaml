@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     io.kompose.service: edgex-support-rulesengine
-  name: rulesengine
+  name: edgex-support-rulesengine
 spec:
   replicas: 1
   template:

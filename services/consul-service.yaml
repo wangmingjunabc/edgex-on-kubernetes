@@ -5,6 +5,7 @@ metadata:
     io.kompose.service: edgex-core-consul
   name: edgex-core-consul
 spec:
+  type: NodePort
   ports:
   - name: "8400"
     port: 8400
@@ -12,6 +13,7 @@ spec:
   - name: "8500"
     port: 8500
     targetPort: 8500
+    nodePort: 30002
   - name: "8600"
     port: 8600
     targetPort: 8600
