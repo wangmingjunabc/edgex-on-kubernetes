@@ -5,14 +5,13 @@ metadata:
     io.kompose.service: edgex-config-seed
   name: edgex-config-seed
 spec:
-  replicas: 1
   template:
     metadata:
       labels:
         io.kompose.service: edgex-config-seed
     spec:
       containers:
-      - image: edgexfoundry/docker-core-config-seed-go:1.0.0
+      - image: guqiaochina/docker-core-config-seed-go:1.0.0
         name: edgex-config-seed
         resources: {}
         volumeMounts:

@@ -12,7 +12,7 @@ spec:
         io.kompose.service: edgex-ui-go
     spec:
       containers:
-      - image: edgexfoundry/docker-edgex-ui-go:1.0.0
+      - image: edgexfoundry/docker-edgex-ui-go:1.0.1
         name: edgex-ui-go
         ports:
         - containerPort: 4000

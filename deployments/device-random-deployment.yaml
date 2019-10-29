@@ -2,20 +2,20 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    io.kompose.service: edgex-support-rulesengine
-  name: edgex-support-rulesengine
+    io.kompose.service: edgex-device-random
+  name: edgex-device-random
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        io.kompose.service: edgex-support-rulesengine
+        io.kompose.service: edgex-device-random
     spec:
       containers:
-      - image: zhulaoabc/docker-support-rulesengine:2.0.0
-        name: edgex-support-rulesengine
+      - image: edgexfoundry/docker-device-random-go:1.0.0
+        name: edgex-device-random
         ports:
-        - containerPort: 48075
+        - containerPort: 49988
         resources: {}
         volumeMounts:
         - mountPath: /data/db
